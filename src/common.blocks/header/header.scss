@@ -5,6 +5,12 @@
   flex-direction: column;
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px 10px;
+  }
+}
+
 .header__container {
   display: flex;
   align-items: center;
@@ -20,6 +26,17 @@
   line-height: 28px;
   letter-spacing: 0.25px;
   color: #7F8285;
+}
+
+@media screen and (max-width: 768px) {
+  .header__title {
+    font-family: YS Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7F8285;
+  }
 }
 
 .header__controls {
