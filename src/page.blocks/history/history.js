@@ -7,6 +7,7 @@ import Commit from "../../common.blocks/commit/commit";
 import Input from "../../common.blocks/input/input";
 import commitsMocks from "./../../mock/mockCommits";
 import {Link} from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 const History = () => {
     const [commitCount, setCommitCount] = useState(4);
@@ -31,9 +32,7 @@ const History = () => {
         }, 3000);
     }
 
-    const settings = {
-        repository: 'philip1967/my-awesome-repo'
-    }
+    const settings = useSelector((state) => state.settings.settings);
 
     return (
         <div className="history">

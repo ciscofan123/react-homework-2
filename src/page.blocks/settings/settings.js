@@ -4,16 +4,37 @@ import Footer from "../../common.blocks/footer/footer";
 import Input from "../../common.blocks/input/input";
 import './settings.scss';
 import NavButton from "../../common.blocks/navbutton/navbutton";
+import { useSelector, useDispatch } from 'react-redux';
+import { changeSettings } from './../../reducer';
+import {Redirect} from "react-router-dom";
 
-const Settings = () => {
+const Settings = (props) => {
 
-    const onSubmit = () => {};
     const formRef = useRef(null);
 
     const [repositoryText, setRepositoryText] = useState("");
     const [buildText, setBuildText] = useState("");
     const [branchText, setBranchText] = useState("");
     const [syncNumber, setSyncNumber] = useState("");
+    const [isSended, setIsSended] = useState(false);
+
+    const settings = useSelector((state) => state.settings.value);
+    const dispatch = useDispatch();
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        dispatch(changeSettings({
+            repository: repositoryText,
+            build: buildText,
+            branch: branchText,
+            syncDuration: syncNumber
+        }));
+        setIsSended(true);
+    };
+
+    if (isSended) {
+        return <Redirect to={`/history/`} />
+    }
 
     return (
         <div className={"app settings"}>
