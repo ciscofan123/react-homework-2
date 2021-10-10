@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef,useState} from "react";
 import Header from "../../common.blocks/header/header";
 import Footer from "../../common.blocks/footer/footer";
 import Input from "../../common.blocks/input/input";
@@ -8,11 +8,12 @@ import NavButton from "../../common.blocks/navbutton/navbutton";
 const Settings = () => {
 
     const onSubmit = () => {};
-    const onChangeRepository = ()=> {};
-    const onChangeBuild = ()=> {};
-    const onChangeBranch = ()=> {};
-    const onChangeDuration = () => {};
     const formRef = useRef(null);
+
+    const [repositoryText, setRepositoryText] = useState("");
+    const [buildText, setBuildText] = useState("");
+    const [branchText, setBranchText] = useState("");
+    const [syncNumber, setSyncNumber] = useState("");
 
     return (
         <div className={"app settings"}>
@@ -31,9 +32,9 @@ const Settings = () => {
                                 <Input type="text"
                                        name="repository"
                                        elementClass="form__input"
-                                       value={""}
+                                       value={repositoryText}
                                        placeholder="user-name/repo-name"
-                                       autoComplete="off" required={true} onChange={onChangeRepository}
+                                       autoComplete="off" required={true} onChange={setRepositoryText}
                                 />
                             </div>
                         </div>
@@ -43,12 +44,12 @@ const Settings = () => {
                                 <Input
                                     elementClass="form__input"
                                     type="text"
-                                    value={""}
+                                    value={buildText}
                                     name="build"
                                     required={true}
                                     autoComplete="off"
                                     placeholder="npm ci && npm run build"
-                                    onChange={onChangeBuild}
+                                    onChange={setBuildText}
                                 />
                             </div>
                         </div>
@@ -58,11 +59,11 @@ const Settings = () => {
                                 <Input
                                     elementClass="form__input"
                                     type="text"
-                                    value={""}
+                                    value={branchText}
                                     name="branch"
                                     autoComplete="off"
                                     placeholder="master"
-                                    onChange={onChangeBranch}
+                                    onChange={setBranchText}
                                 />
                             </div>
                         </div>
@@ -72,11 +73,11 @@ const Settings = () => {
                                 elementClass="form__input"
                                 type="number"
                                 name="syncDuration"
-                                value={""}
+                                value={syncNumber}
                                 placeholder="10"
                                 min={0}
                                 max={60}
-                                onChange={onChangeDuration}
+                                onChange={setSyncNumber}
                             />
                             <span className="form__unit">minutes</span>
                         </div>

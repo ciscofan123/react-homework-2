@@ -25,14 +25,9 @@ const History = () => {
         setError(null);
 
         setTimeout(() => {
-            if (Math.random() > 0.2) {
-                showBuildPopupShown(false);
-                setHashValue('');
-            } else {
-                setError('Error simulation: Something broken 🤷🏼‍♂️');
-            }
+            showBuildPopupShown(false);
+            setHashValue('');
             toggleLoading(false);
-
         }, 3000);
     }
 
