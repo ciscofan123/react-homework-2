@@ -1,3 +1,5 @@
+@import "src/resources/css/variables";
+
 .history {
   display: flex;
   flex-direction: column;
@@ -25,6 +27,10 @@
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.history__main {
+  margin-bottom: 10px;
 }
 
 h1.history__title {
@@ -55,4 +61,20 @@ h1.history__title {
 .form__buttons {
   display: flex;
   gap: 8px;
+  margin-bottom: 10px;
+}
+
+.form__group {
+  margin-bottom: 18px;
+}
+
+@media screen and (max-width: $mobile-width){
+  .form__buttons {
+    flex-wrap: wrap;
+  }
+
+  .form__button {
+    width: 100%;
+    margin-right: 0;
+  }
 }

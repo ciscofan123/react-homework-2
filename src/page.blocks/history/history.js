@@ -29,7 +29,7 @@ const History = () => {
             showBuildPopupShown(false);
             setHashValue('');
             toggleLoading(false);
-        }, 3000);
+        }, 1500);
     }
 
     const settings = useSelector((state) => state.settings.settings);
@@ -44,12 +44,12 @@ const History = () => {
                                        onClick={() => showBuildPopupShown(true)}
                         />
                         <Link to={"/settings"} className={"controlbutton controlbutton_grey"}>
-                            <ControlButton icon={"settings"} size="sm" style="alt" to='/settings'/>
+                            <img className={"controlbutton__icon"} src={`/img/icon-settings.svg`} alt={`settings icon`} />
                         </Link>
                     </div>
                 </div>
             </div>
-            <main className="content wrapper">
+            <main className="history__main">
                 <div className="content__container container">
                     <div>
                         <ul className="commits">
@@ -72,9 +72,7 @@ const History = () => {
             </main>
             <Footer className={"history__footer"} />
             <Popup isShown={isBuildPopupShown} onClose={() => showBuildPopupShown(false)} title="Run Build">
-                <p className="popup__description">
-                    Enter the commit hash which you want to build.
-                </p>
+                <p className="popup__description">Enter the commit hash which you want to build.</p>
                 <form name="settings" className="history__form form" onSubmit={onFormSubmit}>
                     <div className="form__group">
                         <div className="form__input-wrapper">
@@ -96,6 +94,7 @@ const History = () => {
                             text="Save"
                             type="submit"
                             elementClass="form__button"
+                            className={"controlbutton_bold"}
                             disabled={isLoading}
                         />
                         <ControlButton
@@ -104,6 +103,7 @@ const History = () => {
                             style="alt"
                             onClick={() => showBuildPopupShown(false)}
                             elementClass="form__button"
+                            className={"controlbutton_bold"}
                             disabled={isLoading}
                         />
                     </div>

@@ -61,7 +61,7 @@ const Settings = (props) => {
                         </div>
                         <div className="settingsform__inputgroup">
                             <span className="settingsform__label">Build command <sup className={"settingsform__sup_red"}>*</sup></span>
-                            <div className="form__input-wrapper">
+                            <div className="settingsform__input-wrapper">
                                 <Input
                                     elementClass="form__input"
                                     type="text"
@@ -76,7 +76,7 @@ const Settings = (props) => {
                         </div>
                         <div className="settingsform__inputgroup">
                             <span className="settingsform__label">Main branch</span>
-                            <div className="form__input-wrapper">
+                            <div className="settingsform__input-wrapper">
                                 <Input
                                     elementClass="form__input"
                                     type="text"
@@ -104,14 +104,16 @@ const Settings = (props) => {
                         </div>
                         <div className="form__buttons">
                             <NavButton
+                                className={"form__button"}
                                 theme={"yellow"}
-                                text="Save"
-                                type="submit"
+                                text={"Save"}
+                                type={"submit"}
                             />
                             <NavButton
-                                text="Cancel"
-                                type="button"
-                                onClick={(e) => { e.preventDefault(); history.goBack() }}
+                                className={"form__button"}
+                                text={"Cancel"}
+                                type={"button"}
+                                onClick={(e) => { e.preventDefault(); history.goBack(); }}
                             />
                         </div>
                     </form>
