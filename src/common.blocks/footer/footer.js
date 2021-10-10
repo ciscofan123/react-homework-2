@@ -1,15 +1,20 @@
 import React from "react";
 import "./footer.scss";
 
-const Footer = () => {
+const Footer = (props) => {
     const curDate = new Date();
     let copyrightYears = '2021';
     if ( + curDate.getFullYear() > + copyrightYears) {
         copyrightYears += '-' + curDate.getFullYear();
     }
 
+    let actualClassName = "footer";
+    if (props.className) {
+        actualClassName += ` ${props.className}`;
+    }
+
     return (
-        <footer className={"footer"}>
+        <footer className={actualClassName}>
             <div className={"footer__container container"}>
                 <a href={"#"} className={"footer__item footer__link"}>Support</a>
                 <a href={"#"} className={"footer__item footer__link"}>Learning</a>

@@ -76,7 +76,7 @@ const History = () => {
                     }
                 </div>
             </main>
-            <Footer/>
+            <Footer className={"history__footer"} />
             <Popup isShown={isBuildPopupShown} onClose={() => showBuildPopupShown(false)} title="Run Build">
                 <p className="popup__description">
                     Enter the commit hash which you want to build.

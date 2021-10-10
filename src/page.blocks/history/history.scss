@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 100vh;
 }
 
@@ -11,6 +11,10 @@
   padding: 10px 100px;
   display: flex;
   flex-direction: column;
+}
+
+.history__footer {
+  margin-top: auto;
 }
 
 .history__container {
