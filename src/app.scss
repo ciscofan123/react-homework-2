@@ -1,0 +1,32 @@
+@import "resources/style";
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.app {
+    font-family: YS Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 125%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}

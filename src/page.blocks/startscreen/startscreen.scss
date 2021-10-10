@@ -1,0 +1,29 @@
+.startscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.startscreen__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.startscreen__image {
+  width: 124px;
+  height: 124px;
+}
+
+.startscreen__description {
+  width: 264px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.startscreen__control {
+  margin-top: 24px;
+}
