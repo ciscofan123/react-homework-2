@@ -4,16 +4,25 @@ import Footer from "../../common.blocks/footer/footer";
 import Input from "../../common.blocks/input/input";
 import './settings.scss';
 import NavButton from "../../common.blocks/navbutton/navbutton";
+import {Redirect} from "react-router-dom";
 
 const Settings = () => {
 
-    const onSubmit = () => {};
+    const onSubmit = (e) => {
+        e.preventDefault();
+        setIsApplied(true);
+    };
     const formRef = useRef(null);
 
     const [repositoryText, setRepositoryText] = useState("");
     const [buildText, setBuildText] = useState("");
     const [branchText, setBranchText] = useState("");
     const [syncNumber, setSyncNumber] = useState("");
+    const [isApplied, setIsApplied] = useState(false);
+
+    if (isApplied) {
+        return <Redirect to={`/history/`} />
+    }
 
     return (
         <div className={"app settings"}>
@@ -40,7 +49,7 @@ const Settings = () => {
                         </div>
                         <div className="settingsform__inputgroup">
                             <span className="settingsform__label">Build command <sup className={"settingsform__sup_red"}>*</sup></span>
-                            <div className="form__input-wrapper">
+                            <div className="settingsform__input-wrapper">
                                 <Input
                                     elementClass="form__input"
                                     type="text"
@@ -55,7 +64,7 @@ const Settings = () => {
                         </div>
                         <div className="settingsform__inputgroup">
                             <span className="settingsform__label">Main branch</span>
-                            <div className="form__input-wrapper">
+                            <div className="settingsform__input-wrapper">
                                 <Input
                                     elementClass="form__input"
                                     type="text"
@@ -83,14 +92,16 @@ const Settings = () => {
                         </div>
                         <div className="form__buttons">
                             <NavButton
+                                className={"form__button"}
                                 theme={"yellow"}
-                                text="Save"
-                                type="submit"
+                                text={"Save"}
+                                type={"submit"}
                             />
                             <NavButton
-                                text="Cancel"
-                                type="button"
-                                onClick={(e) => { e.preventDefault(); history.goBack() }}
+                                className={"form__button"}
+                                text={"Cancel"}
+                                type={"button"}
+                                onClick={(e) => { e.preventDefault(); history.goBack(); }}
                             />
                         </div>
                     </form>

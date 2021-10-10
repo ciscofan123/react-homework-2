@@ -9,6 +9,11 @@
   padding: 0px 6px;
 }
 
+.controlbutton_bold {
+  min-height: 36px;
+  padding: 0 20px;
+}
+
 .controlbutton_yellow {
   background: $yellow;
 }
@@ -24,11 +29,16 @@
 }
 
 .controlbutton_yellow:disabled {
-  background: $disabled;
+  background: $yellow-disabled;
 }
 
 .controlbutton_grey {
   background: $grey;
+}
+
+.controlbutton_sm {
+  min-height: 28px;
+  min-width: 28px;
 }
 
 .controlbutton_grey:hover {
@@ -61,6 +71,12 @@
   /* typo / --color-text */
 
   color: #000000;
+}
+
+@media screen and (max-width: 320px) {
+  .controlbutton__label {
+    display: none;
+  }
 }
 
 .controlbutton__icon {

@@ -15,11 +15,11 @@ const Footer = (props) => {
 
     return (
         <footer className={actualClassName}>
-            <div className={"footer__container container"}>
+            <div className={"footer__container"}>
                 <a href={"#"} className={"footer__item footer__link"}>Support</a>
                 <a href={"#"} className={"footer__item footer__link"}>Learning</a>
-                <a href={"#"} className={"footer__item footer__link"}>Русская версия</a>
-                <span className={"footer__item footer__item_right"}>© {copyrightYears} Alexandr Krylov</span>
+                <a href={"#"} className={"footer__item footer__link footer__lastlink"}>Русская версия</a>
+                <span className={"footer__item"}>© {copyrightYears} Alexandr Krylov</span>
             </div>
         </footer>
     );
