@@ -1,6 +1,7 @@
 import React from "react";
 import './header.scss';
 import ControlButton from "../controlbutton/controlbutton";
+import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -8,7 +9,9 @@ const Header = () => {
             <div className={"header__container container"}>
                 <div className={"header__title"}>School CI server</div>
                 <div className={"header__controls"}>
-                    <ControlButton icon={"settings"} text={"Settings"} />
+                    <Link to={"/settings"}>
+                        <ControlButton icon={"settings"} text={"Settings"} />
+                    </Link>
                 </div>
             </div>
         </header>

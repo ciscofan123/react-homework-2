@@ -8,12 +8,30 @@ body {
     margin: 0;
 }
 
+body {
+    margin: 0;
+    font-family: "YS Text", sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    background-color: #ffffff;
+    color: #000000; }
+
 a {
     text-decoration: none;
 }
 
 p {
     margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 .app {

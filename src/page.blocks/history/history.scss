@@ -1,0 +1,54 @@
+.history {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.history__header {
+  background: #FFFFFF;
+  padding: 10px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.history__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1.history__title {
+  color: black;
+  font-family: YS Text;
+  margin: 0;
+  margin-right: 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.25px;
+  display: inline-block;
+}
+
+.history__controls {
+  display: flex;
+  margin-left: auto;
+  gap: 8px;
+}
+
+.commits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form__buttons {
+  display: flex;
+  gap: 8px;
+}

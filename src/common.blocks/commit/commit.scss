@@ -1,0 +1,223 @@
+@import "src/resources/css/variables";
+
+.commits__item {
+  margin-bottom: 8px;
+}
+
+.commit {
+  padding: 12px 25px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 1px 1px rgba(67, 68, 69, 0.3);
+  border-radius: 6px;
+
+  &:hover {
+    box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3), 0px 2px 8px rgba(67, 68, 69, 0.3);
+  }
+}
+
+.commit__status {
+  flex-shrink: 0;
+}
+
+.commit__status-icon {
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.commit__body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.commit__datetime {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.commit__row {
+  display: flex;
+  align-items: center;
+
+  &_message {
+    align-items: baseline;
+  }
+
+  &_first {
+    margin-bottom: 8px;
+  }
+
+  &_left {
+    padding-left: 30px;
+    position: relative;
+  }
+}
+
+.commit__hash {
+  margin-right: 4px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+
+  &_fail {
+    color: $color-code-fail;
+  }
+
+  &_done {
+    color: $color-code-done;
+  }
+
+  &_pending {
+    color: $color-code-pending;
+  }
+}
+
+.commit__message {
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.commit__branch {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.commit__author {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.commit__commit {
+  color: rgba(0, 0, 0, 0.65);
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.06px;
+  margin: 0 10px 0 4px;
+}
+
+.commit-icon {
+  fill: $color-secondary;
+}
+
+.commit__branch-icon {
+  margin-right: 4px;
+}
+
+.commit__calendar-icon,
+.commit__author-icon,
+.commit__stopwatch-icon {
+  margin-right: 6px;
+}
+
+.commit__timestamp-icon,
+.commit__date-icon {
+  margin-right: 6px;
+}
+
+.commit__timestamp,
+.commit__date {
+  line-height: 1;
+}
+
+@media screen and (max-width: $tablet-width) {
+  .commit {
+    flex-wrap: wrap;
+  }
+
+  .commit__datetime {
+    padding-top: 8px;
+    width: 100%;
+    flex-direction: row;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+
+    & .commit__row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    & .commit__row_timestamp {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .commit {
+    padding: 15px 12px;
+  }
+
+  .commit__row {
+    flex-direction: column;
+
+    &_left {
+      padding-left: 0;
+    }
+
+    &_branch {
+      margin-left: 32px;
+      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .commit__status {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .commit__status-icon {
+    position: static;
+    margin-right: 8px;
+  }
+
+  .commit__message {
+    padding-right: 0;
+    margin-left: 32px;
+    white-space: normal;
+    overflow: unset;
+  }
+
+  .commit__author {
+    padding: 8px 0;
+    width: 100%;
+  }
+
+  .commit__datetime {
+    padding-left: 0;
+    margin-left: 32px;
+    width: auto;
+    flex-grow: 1;
+    border-top: 1px solid #f0f2f3;
+
+    & .commit__row {
+      flex-direction: row;
+    }
+  }
+}
+
+.commit__coloricon {
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
